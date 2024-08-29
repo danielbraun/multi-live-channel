@@ -14,8 +14,8 @@ Sub init()
     
     m.Hint.font.size = "20"
     showHint()
-    
-    m.array = loadConfig()
+
+		m.array = m.global.Channels
     if m.array.count() = 1
         m.BottomBar.visible = false
         m.Video.setFocus(true)

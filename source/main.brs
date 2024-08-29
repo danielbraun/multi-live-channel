@@ -11,6 +11,12 @@ sub Main()
     m.adUrl = "http://1c6e2.v.fwmrm.net/ad/g/1?nw=116450&ssnw=116450&sz=1920X1080&1920=ROKU_ADS_DISPLAY_WIDTH&1080=ROKU_ADS_DISPLAY_HEIGHT&asnw=116450&caid=493509699603&csid=fxn_shows_roku&prof=116450:Fox_Live_Roku&resp=vast&metr=1031&flag=+exvt+emcr+sltp&;_fw_ae=d8b58f7bfce28eefcc1cdd5b95c3b663;app_id=ROKU_ADS_APP_ID"
     
     m.global = screen.getGlobalNode()
+    m.global.addField("Channels", "array", true)
+
+		req = CreateObject("roUrlTransfer")
+		req.SetURL("http://danielbraun.xyz/roku.json")
+		m.global.Channels = ParseJson(req.GetToString())
+
     m.global.addField("Model", "int", true)
     m.global.Model = 0
     m.global.addField("Options", "int", true)
