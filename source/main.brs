@@ -14,7 +14,7 @@ sub Main()
     m.global.addField("Channels", "array", true)
 
 		req = CreateObject("roUrlTransfer")
-		req.SetURL("http://danielbraun.xyz/roku.json")
+		req.SetURL("http://danielbraun.xyz/query?from=roku&format=json")
 		m.global.Channels = ParseJson(req.GetToString())
 
     m.global.addField("Model", "int", true)
@@ -42,14 +42,14 @@ sub Main()
     m.global.observeField("AdTracker", m.port)
     
     m.Video = scene.findNode("Video")
-    RAF()
+    'RAF()
 
     while(true)
        msg = wait(0, m.port)
 	   msgType = type(msg)
 	   if m.global.AdTracker = 0
 	       if msg.GetField() = "rowItemSelected" or msg.GetField() = "fire"
-                RAF()
+                'RAF()
            end if
        end if
        if msgType = "roSGScreenEvent"

@@ -9,7 +9,6 @@
         <field id="content" type="node" />
     </interface>
 	
-	<script type= "text/brightscript" uri = "pkg:/components/Config.brs"/>
     <script type="text/brightscript">
 
         <![CDATA[
@@ -18,7 +17,7 @@
 			End Sub
     
 			Sub loadContent()
-				array = loadConfig()
+				array = m.global.Channels
 			    oneRow = GetApiArray(array)
 			    list = [
 			        {
