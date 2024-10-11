@@ -14,7 +14,7 @@ sub Main()
     m.global.addField("Channels", "array", true)
 
 		req = CreateObject("roUrlTransfer")
-		req.SetURL("http://danielbraun.xyz/query?from=roku&format=json")
+		req.SetURL("http://danielbraun.xyz/table/roku.json")
 		m.global.Channels = ParseJson(req.GetToString())
 
     m.global.addField("Model", "int", true)
